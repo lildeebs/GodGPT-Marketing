@@ -20,10 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -34,40 +34,10 @@ jobs:
         run: npm ci
 
       - name: Build Next.js
-        run: |
-          echo "Starting Next.js build..."
-          npm run build
-          echo "Build completed. Checking output..."
-          if [ -d out ]; then
-            echo "✓ out directory created"
-            ls -la out/ | head -10
-          else
-            echo "❌ out directory not found after build"
-            exit 1
-          fi
+        run: npm run build
 
-      - name: Ensure .nojekyll exists in output
-        run: |
-          echo "Checking build output..."
-          if [ ! -d out ]; then
-            echo "❌ Error: out directory not found after build"
-            ls -la
-            exit 1
-          fi
-          echo "✓ out directory exists"
-          
-          # Create .nojekyll file in out directory
-          touch out/.nojekyll
-          echo "✓ Created .nojekyll in out directory"
-          
-          # Verify it exists
-          if [ -f out/.nojekyll ]; then
-            echo "✓ .nojekyll file confirmed"
-            ls -la out/.nojekyll
-          else
-            echo "❌ Error: Failed to create .nojekyll"
-            exit 1
-          fi
+      - name: Create .nojekyll file
+        run: touch out/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
