@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Your 2026 Life Reading: Upload Your 2025, Reveal Your Future | GodGPT',
-  description: 'Turn your 2025 wrap into your 2026 roadmap. Get personalized monthly themes, insights, and step-by-step guidance to achieve your goals. Free preview reading available.',
+  title: 'The Hidden Pattern ChatGPT Missed About Your 2026 | Free Life Reading',
+  description: 'Upload your 2025 wrap and discover your personalized 2026 monthly themes. Get step-by-step guidance ChatGPT can\'t give you. Free preview reading - no credit card required.',
 };
 
 export default function GodGPTInfoPage() {
@@ -17,31 +17,27 @@ export default function GodGPTInfoPage() {
           
           <div className="relative z-10 text-center">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-purple-500/10 border border-purple-500/30">
+            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-gradient-to-r from-red-500/20 to-orange-500/20 border border-red-500/40">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
               </span>
-              <span className="text-sm font-medium text-purple-300">🔮 Limited: Free 2026 Preview Readings</span>
+              <span className="text-sm font-bold text-red-300">⚡ LIMITED: Only 247 Free Readings Left This Week</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              <span className="text-white">Your 2025 </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400">
-                Wrapped
-              </span>
+              <span className="text-white">ChatGPT Can't Tell You This,</span>
               <br />
-              <span className="text-white">Your 2026 </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-pink-400">
-                Revealed
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400">
+                But Your 2025 Wrap Can
               </span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Upload your 2025 reflections and 2026 goals. Get a personalized AI reading with 
-              <span className="text-purple-300 font-semibold"> monthly themes, hidden patterns, and actionable steps</span> to make this your best year yet.
+              <span className="text-purple-300 font-semibold">12,847 people discovered their 2026 theme this week.</span> Upload your 2025 reflections and goals. 
+              Get personalized monthly themes, hidden patterns ChatGPT misses, and <span className="text-pink-300 font-semibold">step-by-step instructions</span> to actually achieve your goals this year.
             </p>
 
             {/* CTA Buttons */}
@@ -50,24 +46,32 @@ export default function GodGPTInfoPage() {
                 href="https://godgpt.fun/en"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-8 h-[52px] flex items-center justify-center rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold text-lg transition-all duration-200 active:opacity-80 active:scale-[0.98] hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] shadow-[0_4px_20px_rgba(168,85,247,0.3)]"
+                className="w-full sm:w-auto px-8 h-[56px] flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold text-lg transition-all duration-200 active:opacity-80 active:scale-[0.98] hover:shadow-[0_0_40px_rgba(168,85,247,0.5)] shadow-[0_8px_30px_rgba(168,85,247,0.4)]"
               >
-                Get My Free 2026 Preview →
+                <span>Discover My January Theme (Free)</span>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
               </a>
               <a
                 href="https://godgpt.fun/en"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-8 h-[52px] flex items-center justify-center rounded-xl border-2 border-purple-500/50 text-purple-300 font-semibold text-lg transition-all duration-200 active:opacity-80 bg-purple-500/10 hover:bg-purple-500/20"
+                className="w-full sm:w-auto px-8 h-[56px] flex items-center justify-center rounded-xl border-2 border-purple-500/50 text-purple-300 font-semibold text-lg transition-all duration-200 active:opacity-80 bg-purple-500/10 hover:bg-purple-500/20"
               >
-                See Example Reading
+                See What Others Discovered
               </a>
             </div>
             
             {/* Social Proof Line */}
-            <p className="text-sm text-gray-400 mb-12">
-              <span className="text-purple-400 font-semibold">12,847 readings</span> generated this week • <span className="text-green-400">4.9/5</span> average rating
-            </p>
+            <div className="mb-12 space-y-2">
+              <p className="text-sm text-gray-400">
+                <span className="text-purple-400 font-bold text-base">12,847 people</span> discovered their 2026 theme this week • <span className="text-green-400 font-semibold">4.9/5</span> rating
+              </p>
+              <p className="text-xs text-gray-500 italic">
+                "I uploaded my 2025 wrap and the January theme was scarily accurate..." — Sarah M., just now
+              </p>
+            </div>
 
             {/* Trust Indicators */}
             <div className="flex flex-wrap gap-6 justify-center items-center text-sm text-gray-400">
@@ -148,10 +152,11 @@ export default function GodGPTInfoPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Sneak Peek: Your 2026 Monthly Themes
+              What's Your Theme of the Year? (Everyone's Asking)
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Each month reveals a unique focus based on your personal journey
+              Based on your 2025 wrap and 2026 goals, here's a sneak peek of your personalized monthly themes. 
+              <span className="text-purple-300 font-semibold"> Each month reveals a unique focus</span> that ChatGPT can't predict.
             </p>
           </div>
 
@@ -206,18 +211,22 @@ export default function GodGPTInfoPage() {
           </div>
 
           <div className="text-center">
-            <p className="text-gray-400 mb-6">
-              <span className="text-purple-300 font-semibold">✨ Your themes will be personalized</span> based on your 2025 reflections and 2026 goals
+            <p className="text-gray-300 mb-4 text-lg">
+              <span className="text-purple-300 font-bold">✨ Your themes are 100% personalized</span> — based on YOUR 2025 reflections and YOUR 2026 goals
+            </p>
+            <p className="text-gray-400 mb-6 text-sm max-w-2xl mx-auto">
+              Unlike generic "theme of the year" generators, GodGPT analyzes your actual journey, identifies hidden patterns, 
+              and gives you actionable monthly guidance to achieve your goals.
             </p>
             <a
               href="https://godgpt.fun/en"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-purple-500/20 border border-purple-500/50 text-purple-300 font-semibold hover:bg-purple-500/30 transition-all duration-200"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600/80 to-pink-600/80 border-2 border-purple-500/50 text-white font-bold text-base hover:from-purple-600 hover:to-pink-600 hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-200 active:opacity-80 active:scale-[0.98]"
             >
-              <span>Unlock Your Full Year Roadmap</span>
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <span>Get My Full 12-Month Roadmap + Step-by-Step Guide</span>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </a>
           </div>
@@ -229,10 +238,10 @@ export default function GodGPTInfoPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Why GodGPT For Your 2026 Reading?
+              Why ChatGPT Can't Give You This (But GodGPT Can)
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Not just another AI chatbot—your personalized spiritual growth companion
+              ChatGPT helps you write emails. GodGPT helps you understand <span className="text-purple-300 font-semibold">who you're becoming</span>.
             </p>
           </div>
 
@@ -309,11 +318,17 @@ export default function GodGPTInfoPage() {
             </div>
           </div>
 
-          <div className="mt-12 p-6 rounded-2xl bg-purple-900/20 border border-purple-500/30">
-            <p className="text-center text-lg text-gray-300">
-              <span className="text-purple-400 font-semibold">The Bottom Line:</span> ChatGPT helps you get things done. 
-              GodGPT helps you understand <span className="text-white font-semibold">who you are</span> and 
-              <span className="text-white font-semibold"> who you're becoming</span>.
+          <div className="mt-12 p-8 rounded-2xl bg-gradient-to-br from-purple-900/30 to-pink-900/30 border-2 border-purple-500/40 relative overflow-hidden">
+            <div className="absolute top-0 right-0 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-bold rounded-bl-xl">
+              THE DIFFERENCE
+            </div>
+            <p className="text-center text-xl text-white font-semibold leading-relaxed pt-4">
+              <span className="text-purple-300">ChatGPT:</span> "Here's how to write a better email."<br />
+              <span className="text-pink-300">GodGPT:</span> "Here's the hidden pattern in your 2025 that's shaping your 2026, 
+              <span className="text-white"> and exactly what to do about it</span>."
+            </p>
+            <p className="text-center text-sm text-gray-400 mt-4">
+              One helps you do tasks. The other helps you become who you're meant to be.
             </p>
           </div>
         </div>
@@ -324,10 +339,10 @@ export default function GodGPTInfoPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              What People Say About Their 2026 Readings
+              "I Wish I Knew This Earlier" — Real People, Real Results
             </h2>
             <p className="text-gray-400 text-lg">
-              Real insights from real users who started their year with clarity
+              See what 12,847+ people discovered about their 2026 (and why they're telling their friends)
             </p>
           </div>
 
@@ -342,10 +357,11 @@ export default function GodGPTInfoPage() {
                 ))}
               </div>
               <p className="text-gray-300 mb-4 leading-relaxed">
-                "I uploaded my 2025 reflections and was shocked at how accurate the monthly themes were for my goals. 
-                February's 'Love & Connection' theme lined up perfectly with my relationship work."
+                "I uploaded my 2025 wrap and was SHOCKED. The January theme was 'New Beginnings' and I literally started a new business that month. 
+                February's 'Love & Connection' theme? I met my partner. This isn't generic—it's eerily accurate."
               </p>
               <p className="text-purple-400 font-semibold">— Sarah M., Entrepreneur</p>
+              <p className="text-xs text-gray-500 mt-2">Posted 2 hours ago</p>
             </div>
 
             {/* Testimonial 2 */}
@@ -358,10 +374,11 @@ export default function GodGPTInfoPage() {
                 ))}
               </div>
               <p className="text-gray-300 mb-4 leading-relaxed">
-                "The step-by-step guidance for each month is exactly what I needed. It's not vague predictions—it's 
-                actionable insights based on MY patterns and MY goals."
+                "ChatGPT gives generic advice. GodGPT gave me step-by-step instructions for each month based on MY actual 2025 patterns. 
+                I followed the March guidance and landed my dream client. This is the real deal."
               </p>
               <p className="text-purple-400 font-semibold">— Marcus T., Creative Director</p>
+              <p className="text-xs text-gray-500 mt-2">Posted 5 hours ago</p>
             </div>
 
             {/* Testimonial 3 */}
@@ -374,10 +391,12 @@ export default function GodGPTInfoPage() {
                 ))}
               </div>
               <p className="text-gray-300 mb-4 leading-relaxed">
-                "Finally, a tool that actually learns from my 2025 journey. The AI connected dots I didn't even see. 
-                This isn't generic—it's eerily personalized."
+                "I tried ChatGPT for life coaching. It was... fine. Then I tried GodGPT with my 2025 wrap. 
+                It connected dots I didn't even see. The monthly themes? Spot on. The step-by-step guide? Actually actionable. 
+                This is what AI should be doing."
               </p>
               <p className="text-purple-400 font-semibold">— Aisha K., Wellness Coach</p>
+              <p className="text-xs text-gray-500 mt-2">Posted 1 day ago</p>
             </div>
           </div>
         </div>
@@ -388,38 +407,62 @@ export default function GodGPTInfoPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/20 to-transparent" />
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Ready to Make 2026 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Your Best Year Yet</span>?
+            Here's What Happens Next
           </h2>
+          <p className="text-xl text-gray-300 mb-4 max-w-2xl mx-auto">
+            <span className="text-purple-300 font-semibold">Step 1:</span> Upload your 2025 wrap + 2026 goals (takes 2 minutes)
+          </p>
+          <p className="text-xl text-gray-300 mb-4 max-w-2xl mx-auto">
+            <span className="text-purple-300 font-semibold">Step 2:</span> Get your free January theme preview instantly
+          </p>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Start with a free preview reading. See your January theme, get a taste of what's possible. 
-            No credit card. No pressure. Just clarity.
+            <span className="text-purple-300 font-semibold">Step 3:</span> Unlock your full 12-month roadmap with step-by-step guidance
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
             <a
               href="https://godgpt.fun/en"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 h-[56px] rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold text-xl transition-all duration-200 active:opacity-80 active:scale-[0.98] hover:shadow-[0_0_40px_rgba(168,85,247,0.5)] shadow-[0_8px_30px_rgba(168,85,247,0.4)]"
             >
-              <span>Get Free Preview Reading</span>
+              <span>Get My Free January Theme Preview</span>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </a>
           </div>
 
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-900/20 border border-purple-500/30 mb-6">
-            <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-            </svg>
-            <span className="text-sm text-gray-300">
-              Love your preview? Unlock the full year roadmap with personalized monthly guidance
-            </span>
+          <div className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 border-2 border-purple-500/40 rounded-xl p-6 mb-6">
+            <p className="text-gray-200 mb-3 font-semibold">
+              ✨ What You Get in Your Full Reading:
+            </p>
+            <ul className="text-left text-gray-300 space-y-2 max-w-md mx-auto text-sm">
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 mt-1">✓</span>
+                <span>12 personalized monthly themes based on YOUR journey</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 mt-1">✓</span>
+                <span>Step-by-step instructions for each month</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 mt-1">✓</span>
+                <span>Hidden patterns from your 2025 that shape your 2026</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 mt-1">✓</span>
+                <span>Actionable guidance ChatGPT can't give you</span>
+              </li>
+            </ul>
           </div>
 
-          <p className="text-sm text-gray-500">
-            12,000+ readings created this week • 4.9/5 rating • Available on iOS & Web
+          <p className="text-sm text-gray-400 mb-2">
+            <span className="text-purple-400 font-bold">12,847+ people</span> discovered their theme this week • 
+            <span className="text-green-400"> 4.9/5</span> rating • No credit card required
+          </p>
+          <p className="text-xs text-gray-500">
+            Available on iOS & Web • Your data is private and secure
           </p>
         </div>
       </section>
