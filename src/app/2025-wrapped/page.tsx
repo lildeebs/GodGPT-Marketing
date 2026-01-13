@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: '2025 Wrapped - Lunar New Year Reading | GodGPT',
@@ -22,9 +21,11 @@ export default function Wrapped2025Page() {
 
         {/* Quick Links */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          <Link
-            href="/2025-wrapped/mobile"
-            className="p-6 rounded-2xl bg-gradient-to-br from-purple-900/40 to-pink-900/40 border border-purple-500/30 hover:border-purple-500/50 transition-all group"
+          <a
+            href="/GodGPT-Marketing/2025-wrapped/godgpt-mobile-with-form.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-6 rounded-2xl bg-gradient-to-br from-purple-900/40 to-pink-900/40 border border-purple-500/30 hover:border-purple-500/50 transition-all group block"
           >
             <div className="flex items-center gap-3 mb-3">
               <span className="text-2xl">📱</span>
@@ -38,9 +39,11 @@ export default function Wrapped2025Page() {
             </span>
           </Link>
 
-          <Link
-            href="/2025-wrapped/desktop"
-            className="p-6 rounded-2xl bg-gradient-to-br from-purple-900/40 to-pink-900/40 border border-purple-500/30 hover:border-purple-500/50 transition-all group"
+          <a
+            href="/GodGPT-Marketing/2025-wrapped/godgpt-banner-screenshot-ready.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-6 rounded-2xl bg-gradient-to-br from-purple-900/40 to-pink-900/40 border border-purple-500/30 hover:border-purple-500/50 transition-all group block"
           >
             <div className="flex items-center gap-3 mb-3">
               <span className="text-2xl">💻</span>
@@ -85,7 +88,7 @@ export default function Wrapped2025Page() {
           <h2 className="text-xl font-bold mb-4">Direct HTML Files</h2>
           <div className="space-y-2 text-sm">
             <a
-              href="/2025-wrapped/godgpt-mobile-with-form.html"
+              href="/GodGPT-Marketing/2025-wrapped/godgpt-mobile-with-form.html"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-purple-400 hover:text-purple-300"
@@ -93,7 +96,7 @@ export default function Wrapped2025Page() {
               📱 godgpt-mobile-with-form.html
             </a>
             <a
-              href="/2025-wrapped/godgpt-banner-screenshot-ready.html"
+              href="/GodGPT-Marketing/2025-wrapped/godgpt-banner-screenshot-ready.html"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-purple-400 hover:text-purple-300"
@@ -101,7 +104,7 @@ export default function Wrapped2025Page() {
               💻 godgpt-banner-screenshot-ready.html
             </a>
             <a
-              href="/2025-wrapped/godgpt-app-with-banner.html"
+              href="/GodGPT-Marketing/2025-wrapped/godgpt-app-with-banner.html"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-purple-400 hover:text-purple-300"
@@ -109,7 +112,7 @@ export default function Wrapped2025Page() {
               🎨 godgpt-app-with-banner.html
             </a>
             <a
-              href="/2025-wrapped/download-banner-mockup.html"
+              href="/GodGPT-Marketing/2025-wrapped/download-banner-mockup.html"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-purple-400 hover:text-purple-300"
