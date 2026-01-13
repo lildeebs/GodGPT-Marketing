@@ -2,6 +2,14 @@
 
 import { useEffect, useState } from 'react';
 
+// Helper to get correct image path with basePath support
+const getImagePath = (imageName: string) => {
+  const basePath = process.env.NODE_ENV === 'production' && process.env.EXPORT_MODE === 'true' ? '/GodGPT-Marketing' : '';
+  // URL encode spaces in filename
+  const encodedName = imageName.replace(/ /g, '%20');
+  return `${basePath}/influencer-brief/${encodedName}`;
+};
+
 export default function InfluencerBriefPage() {
   const [currentSlide, setCurrentSlide] = useState(1);
   const totalSlides = 6;
@@ -416,7 +424,7 @@ export default function InfluencerBriefPage() {
           <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
             <div className="flex justify-center md:justify-start">
               <img 
-                src="/influencer-brief/SM_Phone_1080 x 1920_2.png" 
+                src={getImagePath('SM_Phone_1080 x 1920_2.png')}
                 alt="GodGPT Phone" 
                 className="max-w-full h-auto rounded-lg shadow-2xl" 
                 style={{ maxHeight: '80vh' }}
@@ -445,7 +453,7 @@ export default function InfluencerBriefPage() {
             <div className="flex justify-center md:justify-start">
               <div className="aspect-square w-full max-w-md overflow-hidden rounded-xl shadow-2xl">
                 <img 
-                  src="/influencer-brief/SM_Ethereal_1080 x 1920_5.png" 
+                  src={getImagePath('SM_Ethereal_1080 x 1920_5.png')}
                   alt="Beyond Your Belief" 
                   className="w-full h-full object-cover" 
                   style={{ objectPosition: 'center 70%' }}
