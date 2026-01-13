@@ -62,6 +62,10 @@ jobs:
             cp 'public/GodGPT Logo_Cursor.png' out/ 2>/dev/null || true
             echo "✓ Copied original logo file"
           fi
+          if [ -d public/influencer-brief ]; then
+            cp -r public/influencer-brief out/ 2>/dev/null || true
+            echo "✓ Copied influencer-brief images to out directory"
+          fi
 
       - name: Create .nojekyll file
         run: |
