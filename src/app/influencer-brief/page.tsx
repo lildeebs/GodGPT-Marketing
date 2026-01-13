@@ -435,7 +435,7 @@ export default function InfluencerBriefPage() {
                 src={getImagePath('SM_Phone_1080 x 1920_2.png')}
                 alt="GodGPT Phone" 
                 className="max-w-full h-auto rounded-lg shadow-2xl" 
-                style={{ maxHeight: '80vh' }}
+                style={{ maxHeight: '50vh', maxWidth: '300px' }}
               />
             </div>
             <div className="text-center md:text-left">
@@ -459,7 +459,7 @@ export default function InfluencerBriefPage() {
         <div className="slide-container">
           <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto mb-8">
             <div className="flex justify-center md:justify-start">
-              <div className="aspect-square w-full max-w-xs overflow-hidden rounded-xl shadow-2xl">
+              <div className="aspect-square w-full max-w-sm overflow-hidden rounded-xl shadow-2xl">
                 <img 
                   src={getImagePath('SM_Ethereal_1080 x 1920_5.png')}
                   alt="Beyond Your Belief" 
