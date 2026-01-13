@@ -37,7 +37,7 @@ export default function Wrapped2025Page() {
             <span className="text-purple-400 group-hover:text-purple-300 text-sm font-semibold">
               View Mockup →
             </span>
-          </Link>
+          </a>
 
           <a
             href="/GodGPT-Marketing/2025-wrapped/godgpt-banner-screenshot-ready.html"
@@ -55,7 +55,7 @@ export default function Wrapped2025Page() {
             <span className="text-purple-400 group-hover:text-purple-300 text-sm font-semibold">
               View Mockup →
             </span>
-          </Link>
+          </a>
         </div>
 
         {/* Documentation Links */}
