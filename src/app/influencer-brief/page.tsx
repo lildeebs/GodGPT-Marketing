@@ -435,7 +435,7 @@ export default function InfluencerBriefPage() {
                 src={getImagePath('SM_Phone_1080 x 1920_2.png')}
                 alt="GodGPT Phone" 
                 className="max-w-full h-auto rounded-lg shadow-2xl" 
-                style={{ maxHeight: '50vh', maxWidth: '300px' }}
+                style={{ maxHeight: '75vh', maxWidth: '450px' }}
               />
             </div>
             <div className="text-center md:text-left">
