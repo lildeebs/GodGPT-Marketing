@@ -459,7 +459,7 @@ export default function InfluencerBriefPage() {
         <div className="slide-container">
           <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto mb-8">
             <div className="flex justify-center md:justify-start">
-              <div className="aspect-square w-full max-w-md overflow-hidden rounded-xl shadow-2xl">
+              <div className="aspect-square w-full max-w-xs overflow-hidden rounded-xl shadow-2xl">
                 <img 
                   src={getImagePath('SM_Ethereal_1080 x 1920_5.png')}
                   alt="Beyond Your Belief" 
@@ -474,7 +474,7 @@ export default function InfluencerBriefPage() {
                   What is GodGPT?
                 </h1>
                 <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                  GodGPT is a spiritual wellness app that helps you reflect deeply and uncover inner truth. We partner with creators to amplify creativity, post authentic content, and engage audiences through meaningful spiritual journeys.
+                  GodGPT is a spiritual wellness app that helps you reflect deeply and uncover inner truth.
                 </p>
               </div>
               <div className="content-card bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-purple-500/40">
