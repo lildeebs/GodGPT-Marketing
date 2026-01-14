@@ -622,13 +622,18 @@ export default function InfluencerBriefPage() {
               <div className="content-card">
                 <h3 className="text-xl font-bold mb-4 text-purple-300">Video Requirements</h3>
                 <ul className="space-y-2 text-sm text-gray-300">
-                  <li>⏱️ <strong>Duration:</strong> 30-60 seconds</li>
+                  <li>⏱️ <strong>Duration:</strong> Min 30 to 60 secs</li>
                   <li>📐 <strong>Format:</strong> 9:16 vertical</li>
-                  <li>📹 <strong>Quality:</strong> 4K or 1080p minimum</li>
-                  <li>🖼️ <strong>Thumbnail:</strong> Required + review</li>
-                  <li>🎵 <strong>Music:</strong> Copyright-free only</li>
-                  <li>✅ <strong>Review:</strong> Send high-res before posting</li>
+                  <li>📹 <strong>File Format:</strong> Quicktime.mov with 4K or 1080p min</li>
+                  <li>🎵 <strong>Music:</strong> Copyright free music and sounds</li>
                 </ul>
+                <div className="mt-4 pt-4 border-t border-gray-700">
+                  <p className="text-xs font-semibold text-purple-300 mb-2">Important for review before posting:</p>
+                  <ul className="space-y-1 text-xs text-gray-300">
+                    <li>✅ Always send high-res versions</li>
+                    <li>✅ Always include cover image/thumbnail</li>
+                  </ul>
+                </div>
               </div>
               
               <div className="content-card">
