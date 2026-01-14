@@ -624,7 +624,7 @@ export default function InfluencerBriefPage() {
                 <ul className="space-y-2 text-sm text-gray-300">
                   <li>⏱️ <strong>Duration:</strong> Min 30 to 60 secs</li>
                   <li>📐 <strong>Format:</strong> 9:16 vertical</li>
-                  <li>📹 <strong>File Format:</strong> Quicktime.mov with 4K or 1080p min</li>
+                  <li>📹 <strong>File Format:</strong> Quicktime.mov with a minimum 4K or 1080p</li>
                   <li>🎵 <strong>Music:</strong> Copyright free music and sounds</li>
                 </ul>
                 <div className="mt-4 pt-4 border-t border-gray-700">
