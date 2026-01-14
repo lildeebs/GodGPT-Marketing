@@ -614,7 +614,24 @@ export default function InfluencerBriefPage() {
                 <span className="px-4 py-2 bg-purple-500/20 border border-purple-500/40 rounded-full text-purple-300 font-semibold text-sm">
                   #GodGPT
                 </span>
-                <p className="text-xs text-gray-400 mt-3 italic">Secondary hashtags: Write in separate comment</p>
+              </div>
+              
+              <div className="content-card">
+                <h3 className="text-xl font-bold mb-3 text-purple-300">Secondary Hashtags</h3>
+                <p className="text-xs text-gray-400 mb-3 italic">Recommended: Write in a separate comment rather than the post caption.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1.5 bg-gray-700/50 border border-gray-600/50 rounded-full text-gray-300 text-sm">#SpiritualWellness</span>
+                  <span className="px-3 py-1.5 bg-gray-700/50 border border-gray-600/50 rounded-full text-gray-300 text-sm">#AISpiritualGuidance</span>
+                  <span className="px-3 py-1.5 bg-gray-700/50 border border-gray-600/50 rounded-full text-gray-300 text-sm">#SelfDiscovery</span>
+                  <span className="px-3 py-1.5 bg-gray-700/50 border border-gray-600/50 rounded-full text-gray-300 text-sm">#InnerClarity</span>
+                  <span className="px-3 py-1.5 bg-gray-700/50 border border-gray-600/50 rounded-full text-gray-300 text-sm">#PersonalReflection</span>
+                  <span className="px-3 py-1.5 bg-gray-700/50 border border-gray-600/50 rounded-full text-gray-300 text-sm">#ProfessionalMindfulness</span>
+                  <span className="px-3 py-1.5 bg-gray-700/50 border border-gray-600/50 rounded-full text-gray-300 text-sm">#ExecutiveWellness</span>
+                  <span className="px-3 py-1.5 bg-gray-700/50 border border-gray-600/50 rounded-full text-gray-300 text-sm">#Mindfulness</span>
+                  <span className="px-3 py-1.5 bg-gray-700/50 border border-gray-600/50 rounded-full text-gray-300 text-sm">#Wellness</span>
+                  <span className="px-3 py-1.5 bg-gray-700/50 border border-gray-600/50 rounded-full text-gray-300 text-sm">#SelfCare</span>
+                  <span className="px-3 py-1.5 bg-gray-700/50 border border-gray-600/50 rounded-full text-gray-300 text-sm">#PersonalGrowth</span>
+                </div>
               </div>
             </div>
             
