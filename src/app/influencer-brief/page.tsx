@@ -43,12 +43,27 @@ export default function InfluencerBriefPage() {
               return { url, thumbnail: data.thumbnail_url || '' };
             }
           } else if (url.includes('facebook.com')) {
-            // Facebook - use public oEmbed endpoint
+            // Facebook - try multiple methods
+            const videoId = url.match(/reel\/(\d+)/)?.[1];
+            
+            // Method 1: Use noembed.com (reliable oEmbed proxy)
             try {
-              // Try Facebook's public oEmbed endpoint first
+              const noembedUrl = `https://noembed.com/embed?url=${encodeURIComponent(url)}`;
+              const response = await fetch(noembedUrl);
+              if (response.ok) {
+                const data = await response.json();
+                if (data.thumbnail_url) {
+                  return { url, thumbnail: data.thumbnail_url };
+                }
+              }
+            } catch (e) {
+              console.log('noembed.com failed:', e);
+            }
+            
+            // Method 2: Try Facebook's oEmbed with CORS proxy
+            try {
               const oembedUrl = `https://www.facebook.com/plugins/video/oembed.json/?url=${encodeURIComponent(url)}`;
               const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(oembedUrl)}`;
-              
               const response = await fetch(proxyUrl);
               if (response.ok) {
                 const proxyData = await response.json();
@@ -58,14 +73,28 @@ export default function InfluencerBriefPage() {
                 }
               }
             } catch (e) {
-              console.log('Facebook oEmbed failed, trying fallback:', e);
+              console.log('Facebook oEmbed with proxy failed:', e);
             }
             
-            // Fallback: extract video ID and use Graph API pattern
-            const videoId = url.match(/reel\/(\d+)/)?.[1];
+            // Method 3: Try alternative CORS proxy
+            try {
+              const oembedUrl = `https://www.facebook.com/plugins/video/oembed.json/?url=${encodeURIComponent(url)}`;
+              const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(oembedUrl)}`;
+              const response = await fetch(proxyUrl);
+              if (response.ok) {
+                const data = await response.json();
+                if (data.thumbnail_url) {
+                  return { url, thumbnail: data.thumbnail_url };
+                }
+              }
+            } catch (e) {
+              console.log('Alternative proxy failed:', e);
+            }
+            
+            // Method 4: Fallback - try to construct thumbnail URL from video ID
             if (videoId) {
-              // Try Graph API pattern (may require authentication, but worth trying)
-              return { url, thumbnail: `https://graph.facebook.com/${videoId}/picture?type=large` };
+              // Facebook sometimes serves thumbnails at this pattern
+              return { url, thumbnail: `https://scontent.xx.fbcdn.net/v/t15.5256-10/${videoId}_n.jpg` };
             }
           }
         } catch (error) {
