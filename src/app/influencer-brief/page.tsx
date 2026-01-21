@@ -34,7 +34,7 @@ export default function InfluencerBriefPage() {
       
       // Manual thumbnails - use immediately (no API call needed, instant display)
       const manualThumbnails: Record<string, string> = {
-        'https://www.facebook.com/reel/1638065824272188': 'https://scontent.fsin11-1.fna.fbcdn.net/v/t51.82787-15/605353790_17867245026518564_5057166070766941322_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a27664&_nc_ohc=djHjOZdEKbIQ7kNvwGRS3Ys&_nc_oc=Adkq5q8hhkDXStWPM_AvdcbVj__NX8unrk9Y2oXuLD-BsThJgYrlvFHwcvoUGF-4Dwc&_nc_zt=23&_nc_ht=scontent.fsin11-1.fna&_nc_gid=jdUvqdrsjLkmR5q9cojT7Q&oh=00_AfoMGv_qVJdGXgGkI6VtSIymSS5gaYOL6WEk91JobBisxw&oe=696E750E'
+        'https://www.facebook.com/reel/1638065824272188': 'https://scontent.fsin11-1.fna.fbcdn.net/v/t51.82787-15/605353790_17867245026518564_5057166070766941322_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a27664&_nc_ohc=vDDX88VPk4gQ7kNvwEjijXM&_nc_oc=AdmeGL2GuJ186KbzA1ovIoc84xuuOFN8b-K7MYYs4Js20iWhof_72Oh3AdJ_66dWLgw&_nc_zt=23&_nc_ht=scontent.fsin11-1.fna&_nc_gid=PTPmbbupeuiniVjhvJzq0g&oh=00_AfrR3rQ3Ed92xlVb6FwNW1aHsGiYMgimqLyuiEywEKKEWQ&oe=697625CE'
       };
 
       // Set manual thumbnails immediately (instant display, zero delay)
