@@ -3,6 +3,8 @@
 Auto-generated from all feature plans. Last updated: 2026-01-07
 
 ## Active Technologies
+- TypeScript 5.5+, JavaScript (ES2020+) + React 18.3+, Vite 5.4+, Tailwind CSS 3.4+, Framer Motion 11.3+ (for animations) (002-dating-app-comparison)
+- N/A (static presentation, no backend storage required) (002-dating-app-comparison)
 
 - Frontend: Next.js 14+ (React 18+), TypeScript 5+. Backend: Node.js 20+, TypeScript 5+ + Frontend: React Hook Form, Zod, Framer Motion, Tailwind CSS. Backend: Express.js, Prisma ORM, Resend SDK, validator.js (001-affiliate-onboarding-form)
 
@@ -23,6 +25,7 @@ npm test && npm run lint
 Frontend: Next.js 14+ (React 18+), TypeScript 5+. Backend: Node.js 20+, TypeScript 5+: Follow standard conventions
 
 ## Recent Changes
+- 002-dating-app-comparison: Added TypeScript 5.5+, JavaScript (ES2020+) + React 18.3+, Vite 5.4+, Tailwind CSS 3.4+, Framer Motion 11.3+ (for animations)
 
 - 001-affiliate-onboarding-form: Added Frontend: Next.js 14+ (React 18+), TypeScript 5+. Backend: Node.js 20+, TypeScript 5+ + Frontend: React Hook Form, Zod, Framer Motion, Tailwind CSS. Backend: Express.js, Prisma ORM, Resend SDK, validator.js
 

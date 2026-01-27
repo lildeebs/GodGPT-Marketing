@@ -1,99 +1,100 @@
 <!--
 Sync Impact Report:
-- Version change: 0.0.0 → 1.0.0 (MAJOR: Initial constitution establishment)
-- Added principles: Mobile & Web Design, Accessibility, Security & Privacy, Required Fields
-- Added sections: Design Standards, Security Requirements, Accessibility Standards
-- Templates requiring updates: ✅ plan-template.md (Constitution Check section will reference these principles)
-- Follow-up TODOs: None
+Version: 0.0.0 → 1.0.0 (MAJOR: Initial constitution creation)
+Modified Principles: N/A (new file)
+Added Sections: Core Principles, Marketing Standards, Research & Data Standards, Governance
+Removed Sections: N/A
+Templates Requiring Updates:
+  ✅ plan-template.md - Constitution Check section exists, no changes needed
+  ✅ spec-template.md - No constitution-specific constraints, no changes needed
+  ✅ tasks-template.md - No constitution-specific task types, no changes needed
+  ⚠️ README.md - May need update to reference constitution (manual review recommended)
+Follow-up TODOs:
+  - RATIFICATION_DATE: Unknown - marked as TODO
 -->
 
-# Affiliate Onboarding Platform Constitution
+# GodGPT Marketing Research Platform Constitution
 
 ## Core Principles
 
-### I. Mobile & Web Friendly Design with Clear Communication
-All features MUST be designed with mobile-first and responsive web principles. User interfaces MUST prioritize clear, concise communication. Design decisions MUST ensure content is readable and understandable across all device sizes. Visual hierarchy MUST guide users naturally through interfaces. All text and messaging MUST be clear, jargon-free, and accessible to non-technical users.
+### I. Marketing-First Design
+All features and content MUST prioritize marketing effectiveness and user conversion. Every component serves a clear marketing purpose: awareness, engagement, or conversion. Design decisions are validated against marketing metrics (engagement rates, conversion rates, completion rates) rather than technical elegance alone. Mobile-first responsive design is mandatory for all marketing materials.
 
-### II. Accessibility & User-Friendliness (NON-NEGOTIABLE)
-All features MUST be accessible to users with disabilities, complying with WCAG 2.1 AA standards minimum. Interactive elements MUST have appropriate touch targets (minimum 44x44px). All functionality MUST be operable via keyboard navigation. Visual information MUST not be the sole means of conveying information. Error messages MUST be clear, actionable, and accessible. User flows MUST be intuitive and require minimal learning curve.
+### II. Research-Driven Content Strategy
+Content creation MUST be informed by data and research. All marketing materials reference source research, performance data, or user insights. Content hooks, messaging, and CTAs are tested and iterated based on measurable outcomes. Generic or untested content is prohibited—every piece must have a research-backed rationale or testing plan.
 
-### III. Security & Data Privacy Priority
-Security and data privacy MUST be prioritized in all feature development. All user data MUST be handled according to privacy-by-design principles. Sensitive information MUST be encrypted in transit and at rest. Authentication and authorization MUST be implemented for all data access. Data collection MUST be minimized to only what is necessary. Users MUST be informed about data usage and have control over their data. Security vulnerabilities MUST be addressed immediately upon discovery.
+### III. Brand Consistency & Authenticity
+All marketing materials MUST maintain GodGPT brand identity: mystical/spiritual aesthetic, purple/pink color scheme, authentic voice, and community-focused messaging. Content creators and affiliates are guided by brand guidelines that ensure consistency while allowing authentic personal expression. Brand guidelines supersede individual preferences.
 
-### IV. Required Fields Enforcement
-All form fields designated as required MUST be clearly marked and validated. Users MUST NOT be able to submit forms with missing required fields. Validation MUST occur in real-time where possible, with clear error messaging. Required field indicators MUST be visible and accessible. System MUST prevent data loss by enforcing required field completion before progression.
+### IV. Accessibility & User Experience (NON-NEGOTIABLE)
+All marketing presentations, forms, and landing pages MUST meet WCAG 2.1 AA accessibility standards. Mobile responsiveness is mandatory. Touch targets minimum 44x44px. Form validation must be real-time and user-friendly. Error states must be clear and actionable. Performance targets: <3s load time, 60fps animations.
 
-## Design Standards
+### V. Data Privacy & Security
+All user data collection (forms, analytics, tracking) MUST comply with privacy regulations (GDPR, CCPA). Data collection must be transparent with clear opt-in/opt-out mechanisms. Security measures (HTTPS, input sanitization, CSRF protection) are mandatory for all forms and data submission points.
 
-### Visual Design Requirements
-- **Aesthetic**: Modern, tech-like, dark, moody aesthetic with clean, futuristic elements
-- **Animations**: Smooth, purposeful animations that enhance user experience without causing distraction
-- **Color Contrast**: Minimum 4.5:1 contrast ratio for text (WCAG AA compliance)
-- **Typography**: Clear, readable fonts with appropriate sizing for mobile and desktop
-- **Spacing**: Consistent spacing system following 8px base unit
-- **Responsive Breakpoints**: Mobile-first design with breakpoints at 768px (tablet) and 1024px (desktop)
+## Marketing Standards
 
-### Interaction Design Requirements
-- **Form Validation**: Real-time validation with immediate, clear feedback
-- **Auto-save**: Draft functionality for multi-page forms to prevent data loss
-- **Loading States**: Clear loading indicators for all asynchronous operations
-- **Error Handling**: User-friendly error messages with actionable guidance
-- **Success Feedback**: Clear confirmation of successful actions with appropriate animations
+### Content Quality Requirements
+- All marketing content must align with GodGPT brand voice: contemplative, authentic, community-focused
+- Content hooks must follow the 3-second rule: capture attention within 3 seconds
+- Performance targets: >80% completion rate, >5% engagement rate, >2% share rate
+- Content must be tested or based on proven patterns from research
 
-## Security Requirements
+### Platform-Specific Optimization
+- TikTok/YouTube Shorts: 15-60 second videos (optimized for 15-30s sweet spot)
+- Landing pages: Mobile-first, fast load times, clear CTAs
+- Forms: Progressive enhancement, auto-save drafts, clear validation
+- All content must be optimized for US, UK, and AU markets
 
-### Data Protection
-- All form submissions MUST be transmitted over HTTPS
-- Email notifications MUST be sent securely
-- User data MUST be stored with appropriate encryption
-- Access to user data MUST be logged and auditable
+### Affiliate & Influencer Guidelines
+- All affiliate content must include mandatory tags and hashtags
+- Content must follow brand guidelines while allowing authentic expression
+- Performance tracking and reporting required for affiliate partnerships
+- Clear onboarding materials and brand briefs must be provided
 
-### Input Validation
-- All user inputs MUST be validated and sanitized
-- Protection against common vulnerabilities (XSS, CSRF, SQL injection) MUST be implemented
-- File uploads (if any) MUST be validated for type and size
+## Research & Data Standards
 
-### Privacy Compliance
-- Data collection MUST be transparent to users
-- Users MUST be informed about how their data will be used
-- Data retention policies MUST be clearly defined and followed
+### Research Documentation
+- All marketing research (video analysis, hook testing, content patterns) MUST be documented
+- Research findings must be accessible to content creators and marketing team
+- Performance data must be tracked and analyzed regularly
+- A/B testing results must be documented and shared
 
-## Accessibility Standards
-
-### WCAG 2.1 AA Compliance
-- **Perceivable**: Text alternatives for images, captions for media, sufficient color contrast
-- **Operable**: Keyboard accessible, no seizure-inducing content, sufficient time limits
-- **Understandable**: Readable text, predictable functionality, input assistance
-- **Robust**: Compatible with assistive technologies, valid markup
-
-### Implementation Requirements
-- Semantic HTML MUST be used for structure
-- ARIA labels MUST be provided when semantic HTML is insufficient
-- Focus indicators MUST be visible and clear
-- Screen reader compatibility MUST be tested and verified
+### Data Collection & Analysis
+- Marketing metrics must be tracked: views, engagement, conversion, completion rates
+- User feedback and testimonials must be collected and validated
+- Content performance data must inform future content strategy
+- Research findings must be actionable and specific
 
 ## Development Workflow
 
-### Quality Gates
-- All features MUST pass accessibility audit before deployment
-- Security review MUST be conducted for features handling sensitive data
-- Design review MUST verify mobile and web compatibility
-- Required field validation MUST be tested across all form flows
+### Content Creation Process
+1. Research phase: Analyze trends, performance data, user insights
+2. Concept validation: Test hooks, validate messaging against brand guidelines
+3. Production: Create content following platform-specific best practices
+4. Testing: A/B test variations, measure performance
+5. Iteration: Refine based on data, double down on what works
 
-### Testing Requirements
-- Mobile device testing on real devices (iOS and Android)
-- Cross-browser testing (Chrome, Firefox, Safari, Edge)
-- Accessibility testing with screen readers
-- Security testing for input validation and data protection
+### Code & Design Standards
+- All code must follow TypeScript/React best practices
+- Design must follow mobile-first UI/UX principles
+- Components must be reusable and maintainable
+- Documentation must be clear and accessible
+
+### Review & Approval Process
+- All marketing materials must be reviewed for brand consistency
+- Content must be validated against research and performance data
+- Accessibility and security must be verified before deployment
+- Performance metrics must be reviewed post-deployment
 
 ## Governance
 
-The constitution supersedes all other development practices. All features MUST comply with these principles. Amendments to the constitution require:
-- Documentation of rationale for change
-- Impact assessment on existing features
-- Approval process before implementation
-- Version tracking of all amendments
+This constitution supersedes all other practices and guidelines. All marketing materials, code, and content must comply with these principles.
 
-All code reviews MUST verify compliance with constitution principles. Any violations MUST be addressed before merge. Complexity or exceptions MUST be justified and documented.
+**Amendment Procedure**: Constitution amendments require documentation of rationale, impact assessment, and approval from project stakeholders. Version must be incremented according to semantic versioning (MAJOR.MINOR.PATCH).
 
-**Version**: 1.0.0 | **Ratified**: 2026-01-07 | **Last Amended**: 2026-01-07
+**Compliance Review**: All PRs and content submissions must verify compliance with constitution principles. Violations must be justified or corrected before approval.
+
+**Complexity Justification**: Any deviation from simplicity or standard practices must be documented with clear rationale and rejected alternatives.
+
+**Version**: 1.0.0 | **Ratified**: TODO(RATIFICATION_DATE): Original adoption date unknown - needs historical research | **Last Amended**: 2026-01-08

@@ -25,7 +25,7 @@ export default function InfluencerBriefPage() {
 
   // Fetch video thumbnails dynamically - always fresh, never expires
   useEffect(() => {
-    const fetchThumbnails = async () => {
+    const fetchThumbnails = async (retryCount = 0) => {
       const videoUrls = [
         'https://www.tiktok.com/@godgpt_/video/7584702619336051980',
         'https://www.tiktok.com/@godgpt_/video/7582135504154397970',
@@ -33,9 +33,15 @@ export default function InfluencerBriefPage() {
       ];
 
       // Helper: Add timeout to fetch requests (prevent hanging)
-      const fetchWithTimeout = (url: string, timeout = 3000): Promise<Response> => {
+      const fetchWithTimeout = (url: string, timeout = 5000): Promise<Response> => {
         return Promise.race([
-          fetch(url),
+          fetch(url, {
+            method: 'GET',
+            headers: {
+              'Accept': 'text/html,application/json',
+            },
+            mode: 'cors',
+          }),
           new Promise<Response>((_, reject) => 
             setTimeout(() => reject(new Error('Timeout')), timeout)
           )
@@ -60,55 +66,117 @@ export default function InfluencerBriefPage() {
             const videoId = url.match(/reel\/(\d+)/)?.[1];
             if (!videoId) return { url, thumbnail: '' };
 
-            // Method 1: Extract from Facebook page via proxy (most reliable)
+            // Helper to decode HTML entities
+            const decodeHtmlEntities = (str: string): string => {
+              return str
+                .replace(/&amp;/g, '&')
+                .replace(/&lt;/g, '<')
+                .replace(/&gt;/g, '>')
+                .replace(/&quot;/g, '"')
+                .replace(/&#39;/g, "'")
+                .replace(/&#x27;/g, "'")
+                .replace(/&#x2F;/g, '/');
+            };
+
+            // Helper to extract og:image from HTML with multiple regex patterns
+            const extractOgImage = (html: string): string | null => {
+              // Try multiple regex patterns to catch different HTML formats
+              const patterns = [
+                /<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i,
+                /<meta\s+content=["']([^"']+)["']\s+property=["']og:image["']/i,
+                /property=["']og:image["']\s+content=["']([^"']+)["']/i,
+                /"og:image"\s*:\s*"([^"]+)"/i,
+                /og:image["']?\s*[:=]\s*["']([^"']+)["']/i
+              ];
+
+              for (const pattern of patterns) {
+                const match = html.match(pattern);
+                if (match && match[1]) {
+                  return decodeHtmlEntities(match[1]);
+                }
+              }
+              return null;
+            };
+
+            // Method 1: Extract from Facebook page via api.allorigins.win (most reliable)
             const methods = [
               async () => {
-                const pageUrl = `https://www.facebook.com/reel/${videoId}`;
-                const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(pageUrl)}`;
-                const response = await fetchWithTimeout(proxyUrl, 3000);
-                if (response.ok) {
-                  const proxyData = await response.json();
-                  const html = proxyData.contents;
-                  const ogImageMatch = html.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i);
-                  if (ogImageMatch && ogImageMatch[1]) {
-                    return ogImageMatch[1]
-                      .replace(/&amp;/g, '&')
-                      .replace(/&lt;/g, '<')
-                      .replace(/&gt;/g, '>')
-                      .replace(/&quot;/g, '"')
-                      .replace(/&#39;/g, "'");
+                try {
+                  const pageUrl = `https://www.facebook.com/reel/${videoId}`;
+                  const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(pageUrl)}`;
+                  const response = await fetchWithTimeout(proxyUrl, 5000);
+                  if (response.ok) {
+                    const proxyData = await response.json();
+                    const html = proxyData.contents || '';
+                    const thumbnail = extractOgImage(html);
+                    if (thumbnail) return thumbnail;
                   }
+                } catch (e) {
+                  console.log('Method 1 (allorigins) failed:', e);
                 }
                 return null;
               },
-              // Method 2: Try alternative proxy
+              // Method 2: Try corsproxy.io
               async () => {
-                const pageUrl = `https://www.facebook.com/reel/${videoId}`;
-                const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(pageUrl)}`;
-                const response = await fetchWithTimeout(proxyUrl, 3000);
-                if (response.ok) {
-                  const html = await response.text();
-                  const ogImageMatch = html.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i);
-                  if (ogImageMatch && ogImageMatch[1]) {
-                    return ogImageMatch[1]
-                      .replace(/&amp;/g, '&')
-                      .replace(/&lt;/g, '<')
-                      .replace(/&gt;/g, '>')
-                      .replace(/&quot;/g, '"')
-                      .replace(/&#39;/g, "'");
+                try {
+                  const pageUrl = `https://www.facebook.com/reel/${videoId}`;
+                  const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(pageUrl)}`;
+                  const response = await fetchWithTimeout(proxyUrl, 5000);
+                  if (response.ok) {
+                    const html = await response.text();
+                    const thumbnail = extractOgImage(html);
+                    if (thumbnail) return thumbnail;
                   }
+                } catch (e) {
+                  console.log('Method 2 (corsproxy) failed:', e);
                 }
                 return null;
               },
-              // Method 3: Try noembed.com
+              // Method 3: Try noembed.com oEmbed API
               async () => {
-                const noembedUrl = `https://noembed.com/embed?url=${encodeURIComponent(url)}`;
-                const response = await fetchWithTimeout(noembedUrl, 2000);
-                if (response.ok) {
-                  const data = await response.json();
-                  if (data.thumbnail_url) {
-                    return data.thumbnail_url;
+                try {
+                  const noembedUrl = `https://noembed.com/embed?url=${encodeURIComponent(url)}`;
+                  const response = await fetchWithTimeout(noembedUrl, 3000);
+                  if (response.ok) {
+                    const data = await response.json();
+                    if (data.thumbnail_url) {
+                      return data.thumbnail_url;
+                    }
                   }
+                } catch (e) {
+                  console.log('Method 3 (noembed) failed:', e);
+                }
+                return null;
+              },
+              // Method 4: Try embed.ly oEmbed API
+              async () => {
+                try {
+                  const embedlyUrl = `https://api.embed.ly/1/oembed?url=${encodeURIComponent(url)}&key=internal`;
+                  const response = await fetchWithTimeout(embedlyUrl, 3000);
+                  if (response.ok) {
+                    const data = await response.json();
+                    if (data.thumbnail_url) {
+                      return data.thumbnail_url;
+                    }
+                  }
+                } catch (e) {
+                  console.log('Method 4 (embedly) failed:', e);
+                }
+                return null;
+              },
+              // Method 5: Try alternative CORS proxy (cors-anywhere alternative)
+              async () => {
+                try {
+                  const pageUrl = `https://www.facebook.com/reel/${videoId}`;
+                  const proxyUrl = `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(pageUrl)}`;
+                  const response = await fetchWithTimeout(proxyUrl, 5000);
+                  if (response.ok) {
+                    const html = await response.text();
+                    const thumbnail = extractOgImage(html);
+                    if (thumbnail) return thumbnail;
+                  }
+                } catch (e) {
+                  console.log('Method 5 (codetabs) failed:', e);
                 }
                 return null;
               }
@@ -118,9 +186,12 @@ export default function InfluencerBriefPage() {
             const results = await Promise.allSettled(methods.map(m => m()));
             for (const result of results) {
               if (result.status === 'fulfilled' && result.value) {
+                console.log('Facebook thumbnail fetched successfully');
                 return { url, thumbnail: result.value };
               }
             }
+            
+            console.warn('All Facebook thumbnail fetch methods failed');
           }
         } catch (error) {
           console.log(`Failed to fetch thumbnail for ${url}:`, error);
@@ -131,14 +202,30 @@ export default function InfluencerBriefPage() {
       // Fetch all thumbnails in parallel and update as they arrive
       const results = await Promise.allSettled(thumbnailPromises);
       const thumbnailMap: Record<string, string> = {};
+      const failedUrls: string[] = [];
       
-      results.forEach((result) => {
+      results.forEach((result, index) => {
         if (result.status === 'fulfilled' && result.value.thumbnail) {
           thumbnailMap[result.value.url] = result.value.thumbnail;
+        } else {
+          failedUrls.push(videoUrls[index]);
+          console.warn(`Failed to fetch thumbnail for ${videoUrls[index]}:`, result.status === 'rejected' ? result.reason : 'No thumbnail returned');
         }
       });
       
-      setThumbnails(thumbnailMap);
+      // Update thumbnails immediately with what we got
+      setThumbnails(prev => ({ ...prev, ...thumbnailMap }));
+      
+      // Retry failed URLs once after a short delay (only for Facebook)
+      if (failedUrls.length > 0 && retryCount < 1) {
+        const facebookFailed = failedUrls.filter(url => url.includes('facebook.com'));
+        if (facebookFailed.length > 0) {
+          console.log(`Retrying ${facebookFailed.length} failed Facebook thumbnail(s)...`);
+          setTimeout(() => {
+            fetchThumbnails(retryCount + 1);
+          }, 2000);
+        }
+      }
     };
 
     fetchThumbnails();
